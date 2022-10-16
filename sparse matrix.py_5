@@ -1,0 +1,42 @@
+Given a matrix of size N x M, print whether it is a sparse matrix or not.
+Note: If a matrix contain 0 in more than half of its cells, then it is called a sparse matrix.
+
+Input Format
+
+First line of input contains N, M - size of the matrix. Its followed by N lines each containing M intergers - elements of the matrix.
+
+Constraints
+
+1 <= N, M <= 100
+0 <= ar[i] <= 109
+
+Output Format
+
+Print "Yes" if the given matrix is a sparse matrix, otherwise print "No".
+
+Sample Input 0
+
+2 3
+5 0 0
+0 8 0
+Sample Output 0
+
+Yes
+...
+
+x=list(map(int,input().split()))
+y=x[0]
+z=x[1]
+mat=[]
+for i in range(y):
+    l=list(map(int,input().split()))
+    mat.append(l)
+c=0
+for i in range(y):
+    for j in range(z):
+        if mat[i][j]==0:
+            c=c+1
+if(c>(y*z//2)):
+    print("Yes")
+else:
+    print("No")
